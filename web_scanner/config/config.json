@@ -1,0 +1,70 @@
+{
+  "scan_interval": 3600,
+  "websites": [
+    {
+      "url": "https://news.ycombinator.com",
+      "name": "Hacker News",
+      "selectors": {
+        "articles": "tr.athing",
+        "title": "titlelink",
+        "content": "comment",
+        "image": "img",
+        "link": "a"
+      },
+      "enabled": true
+    },
+    {
+      "url": "https://www.reddit.com/r/programming/hot.json",
+      "name": "Reddit Programming",
+      "selectors": {
+        "articles": "data.children",
+        "title": "title",
+        "content": "selftext",
+        "image": "thumbnail",
+        "link": "url"
+      },
+      "enabled": false,
+      "is_json": true
+    }
+  ],
+  "tor": {
+    "enabled": true,
+    "port": 9050,
+    "control_port": 9051,
+    "password": ""
+  },
+  "vpn": {
+    "enabled": false,
+    "protocol": "openvpn",
+    "config_file": ""
+  },
+  "content_filter": {
+    "keywords": ["python", "programming", "technology", "ai", "machine learning", "security", "linux"],
+    "blacklist": ["spam", "advertisement", "sponsored", "clickbait"],
+    "min_content_length": 100,
+    "learning_enabled": true
+  },
+  "image_processing": {
+    "width": 800,
+    "height": 600,
+    "font_size": 24,
+    "quality": 85
+  },
+  "telegram": {
+    "enabled": false,
+    "bot_token": "",
+    "chat_id": "",
+    "proxy": {
+      "enabled": false,
+      "url": ""
+    }
+  },
+  "database": {
+    "type": "sqlite",
+    "path": "data/scanner.db"
+  },
+  "logging": {
+    "level": "INFO",
+    "max_files": 7
+  }
+}
